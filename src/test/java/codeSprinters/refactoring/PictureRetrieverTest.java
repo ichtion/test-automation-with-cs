@@ -35,7 +35,6 @@ public class PictureRetrieverTest {
 
     @Test
     public void test3() throws NoLoggedUserException {
-        Picture picture = new Picture();
         User user1 = new User();
         User user2 = new User();
 
