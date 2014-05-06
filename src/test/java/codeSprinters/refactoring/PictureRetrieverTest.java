@@ -25,6 +25,7 @@ public class PictureRetrieverTest {
         Picture picture = new Picture();
         User user1 = new User();
         User user2 = new User();
+        User user3 = new User();
         user2.addFriend(user1);
         PictureDao.addPicturesForUser(user1, Arrays.asList(picture));
 
