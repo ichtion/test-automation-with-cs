@@ -13,11 +13,18 @@ public class PictureRetriever {
             throw new NoLoggedUserException();
         }
 
-        for(User friend : currentlyLoggedUser.getFriends()) {
-            if (user.equals(friend)) {
-                return PictureDao.getPicturesForUser(user);
-            }
+        if (isUserFriendOfLoggedUser(user, currentlyLoggedUser)) {
+            return PictureDao.getPicturesForUser(user);
         }
         return null;
+    }
+
+    private boolean isUserFriendOfLoggedUser(User user, User currentlyLoggedUser) {
+        for(User friend : currentlyLoggedUser.getFriends()) {
+            if (user.equals(friend)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
